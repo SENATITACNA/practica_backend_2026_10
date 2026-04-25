@@ -1,14 +1,23 @@
-const clienteService = require("../services/clienteService");
+const clienteService = require('../services/clienteService');
 
-const eliminarCliente = (req, res) => {
- const id = req.params.id;
- clienteService.eliminarCliente(id, (err, resultado) => {
-  if (err) {
-   res.status(500).json({ error: "Error al eliminar el cliente" });
-  } else {
-   res.status(200).json(resultado);
-  }
- });
+const createCliente = async (req, res) => {
+    try {
+        const cliente = req.body;
+
+        const result = await clienteService.createCliente(cliente);
+
+        res.status(201).json({
+            message: 'Cliente creado correctamente',
+            data: result
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            error: error.message
+        });
+    }
 };
 
-module.exports = { eliminarCliente };
+module.exports = {
+    createCliente
+}; 

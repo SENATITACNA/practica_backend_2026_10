@@ -1,10 +1,9 @@
 class Cliente {
- constructor(id, nombre, correo, telefono) {
-  this.id = id;
-  this.nombre = nombre;
-  this.correo = correo;
-  this.telefono = telefono;
- }
+    constructor(id, nombre, email) {
+        this.id = id;
+        this.nombre = nombre;
+        this.email = email;
+    }
 }
 
 module.exports = Cliente;

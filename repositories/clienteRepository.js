@@ -1,14 +1,24 @@
-const db = require("../config/db");
+const db = require('../config/db');
 
-const eliminarCliente = (id, callback) => {
- const sql = "DELETE FROM clientes WHERE id = ?";
- db.query(sql, [id], (err, resultado) => {
-  if (err) {
-   callback(err, null);
-  } else {
-   callback(null, resultado);
-  }
- });
+const create = (cliente) => {
+    return new Promise((resolve, reject) => {
+
+        const query = `
+            INSERT INTO clientes (nombre, email)
+            VALUES (?, ?)
+        `;
+
+        db.query(query, [cliente.nombre, cliente.email], (err, result) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(result);
+            }
+        });
+
+    });
 };
 
-module.exports = { eliminarCliente };
+module.exports = {
+    create
+};
