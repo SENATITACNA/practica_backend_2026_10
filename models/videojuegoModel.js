@@ -1,5 +1,6 @@
 class Videojuegos {
  constructor(id, nombre, precio, consola,stock) {
+ constructor(id, nombre, precio,consola,stock) {
  this.id = id;
  this.nombre = nombre;
  this.precio = precio;
@@ -8,3 +9,4 @@ class Videojuegos {
  }
 }
 module.exports = Videojuegos;
+module.exports = videojuegos;
