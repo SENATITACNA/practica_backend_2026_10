@@ -4,7 +4,7 @@ const connection = mysql.createConnection({
     host: '80.241.217.53',
     user: 'desarrollador',
     password: 'SENATI',
-    database: 'nombre_de_tu_bd' // <-- esto importa
+    database: 'cafeteria'
 });
 
 connection.connect((err) => {
