@@ -1,4 +1,7 @@
 const db = require("../config/db");
+const actualizarCliente = (id, cliente, callback) => {
+ const sql = "UPDATE clientes SET nombre = ?, correo = ?, telefono = ? WHERE id = ?";
+ db.query(sql, [cliente.nombre, cliente.correo, cliente.telefono, id], (err, resultado) => {
 const listarCategorias = (callback) => {
  const sql = "SELECT * FROM categorias";
  db.query(sql, (err, resultados) => {
@@ -17,6 +20,7 @@ const crearVenta = (venta, callback) => {
  });
 };
 module.exports = {
+ actualizarCliente
  listarCategorias
  crearVenta
 };

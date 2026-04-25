@@ -1,3 +1,12 @@
+class clientes {
+ constructor(id, nombre, correo, telefono) {
+ this.id = id;
+ this.nombre = nombre;
+ this.correo = correo;
+ this.telefono = telefono;
+ }
+}
+module.exports = { clientes };
 class categorias {
  constructor(id, nombre, descripcion) {
  this.id = id;

@@ -1,4 +1,6 @@
 const productoRepository = require("../repositories/productoRepositories");
+const actualizarCliente = (id, cliente, callback) => {
+ productoRepository.actualizarCliente(id, cliente, (err, resultado) => {
 const listarCategorias = (callback) => {
  productoRepository.listarCategorias((err, categorias) => {
   if (err) {
@@ -10,14 +12,13 @@ const crearVenta = (venta, callback) => {
   if (err) {
    callback(err, null);
   } else {
-   callback(null, { 
-    mensaje: "Venta registrada correctamente", 
-    id: resultado.insertId 
-   });
+   callback(null, { mensaje: "Cliente actualizado correctamente" });
   }
  });
 };
+
 module.exports = {
- listarCategorias
+ actualizarCliente,
+ listarCategorias,
  crearVenta
 };
