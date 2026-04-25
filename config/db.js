@@ -2,9 +2,9 @@ const mysql = require("mysql2");
 
 const connection = mysql.createConnection({
   host: "80.241.217.53",
-  user: "desarrollador",
-  password: "SENATI",
-  database: "cafeteria"
+  user: "desarrollador", // Usuario
+  password: "SENATI", // Contraseña
+  database: "cafeteria" // Nombre de la base de datos
 });
 
 connection.connect((err) => {
