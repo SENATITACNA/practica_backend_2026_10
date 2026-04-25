@@ -7,6 +7,12 @@ const actualizarCliente = (req, res) => {
    res.status(500).json({ error: "Error al actualizar cliente" });
   } else {
    res.json(resultado);
+const listarCategorias = (req, res) => {
+ productoService.listarCategorias((err, categorias) => {
+  if (err) {
+   res.status(500).json({ error: "Error del servidor" });
+  } else {
+   res.json(categorias);
 const crearVenta = (req, res) => {
  const nuevaVenta = req.body;
  productoService.crearVenta(nuevaVenta, (err, resultado) => {
@@ -19,5 +25,6 @@ const crearVenta = (req, res) => {
 };
 module.exports = {
  actualizarCliente,
+ listarCategorias,
  crearVenta
 };
