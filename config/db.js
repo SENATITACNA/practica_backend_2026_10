@@ -1,4 +1,5 @@
 const mysql = require("mysql2");
+
 const connection = mysql.createConnection({
  host: "80.241.217.53",
  user: "desarrollador", // aquí debes poner el usuario para conectarse a MySQL
