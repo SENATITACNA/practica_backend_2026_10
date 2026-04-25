@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
-const videojuegoRoutes = require("./routes/videojuegoRoutes");
+const routerClientes = require("./routes/routerClientes");
 
 app.use(express.json());
-app.use("/api", videojuegoRoutes);
+app.use("/api", routerClientes);
 
 app.listen(3000, () => {
   console.log("Servidor corriendo en puerto 3000");
