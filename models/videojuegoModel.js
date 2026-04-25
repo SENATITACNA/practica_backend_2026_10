@@ -1,10 +1,10 @@
 class Videojuegos {
- constructor(id, nombre, precio) {
+ constructor(id, nombre, precio, consola, stock) {
  this.id = id;
  this.nombre = nombre;
  this.precio = precio;
- this.consola = this.consola;
- this.stock = this.stock
+ this.consola = consola;
+ this.stock = stock;
  }
 }
-module.exports = Producto;
+module.exports = Videojuegos;

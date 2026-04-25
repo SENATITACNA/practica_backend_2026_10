@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const viedojuegosRoutes = require("./routes/videojuegosRoutes");
+const videojuegosRoutes = require('./routes/videojuegosRoutes');
 app.use(express.json());
 app.use("/api", videojuegosRoutes);
 app.listen(3000, () => {
