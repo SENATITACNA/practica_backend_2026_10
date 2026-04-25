@@ -1,6 +1,6 @@
 const db = require("../config/db");
 
-const actualizarvideojuegos = (id, videojuegos, callback) => {
+const actualizarVideojuegos = (id, videojuegos, callback) => {
   const sql = "UPDATE videojuegos SET nombre = ?, precio = ?, consola = ?, stock = ? WHERE id = ?";
   
   db.query(
@@ -17,5 +17,5 @@ const actualizarvideojuegos = (id, videojuegos, callback) => {
 };
 
 module.exports = {
-  actualizarvideojuegos
+  actualizarVideojuegos
 };
