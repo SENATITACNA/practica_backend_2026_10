@@ -1,14 +1,13 @@
 const clienteService = require("../services/clienteService");
 
-const eliminarCliente = (req, res) => {
- const id = req.params.id;
- clienteService.eliminarCliente(id, (err, resultado) => {
-  if (err) {
-   res.status(500).json({ error: "Error al eliminar el cliente" });
-  } else {
-   res.status(200).json(resultado);
-  }
- });
+const obtenerClientes = (req, res) => {
+    clienteService.obtenerClientes((err, resultados) => {
+        if (err) {
+            res.status(500).json({ error: "Error al obtener clientes", detalle: err.sqlMessage });
+        } else {
+            res.json(resultados);
+        }
+    });
 };
 
-module.exports = { eliminarCliente };
+module.exports = { obtenerClientes };
