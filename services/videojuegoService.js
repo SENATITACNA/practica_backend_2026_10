@@ -1,18 +1,18 @@
-const videojuegosRepositories = require("../repositories/videojuegosRepositories");
+const videojuegoRepository = require("../repositories/videojuegoRepository");
 
-const crearvideojuego = (videojuegos, callback) => {
- videojuegosRepositories.crearvideojuego(videojuegos, (err, resultado) => {
- if (err) {
- callback(err, null);
- } else {
- callback(null, {
- mensaje: "videojuego creado correctamente",
- id: resultado.insertId
- });
- }
- });
+const crearVideoJuego = (videojuego, callback) => {
+  videojuegoRepository.crearVideoJuego(videojuego, (err, resultado) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, {
+        mensaje: "Videojuego creado correctamente",
+        id: resultado.insertId,
+      });
+    }
+  });
 };
 
-module.exports={
-crearvideojuego
+module.exports = {
+  crearVideoJuego,
 };
