@@ -1,16 +1,16 @@
+const videojuegoService = require("../services/videojuegoService");
 const crearVideoJuego = (req, res) => {
- const NuevoVideoJuego = req.body;
- videojuegoService.crearVideoJuego(NuevoVideoJuego, (err, resultado) =>
-{
- if (err) {
- res.status(500).json({ error: "Error al crear Nuevo Videojuego"
-});
- } else {
- res.status(201).json(resultado);
- }
- });
+  const nuevoVideoJuego = req.body;
+
+  videojuegoService.crearVideoJuego(nuevoVideoJuego, (err, resultado) => {
+    if (err) {
+      res.status(500).json({ error: "Error al crear videojuego" });
+    } else {
+      res.status(201).json(resultado);
+    }
+  });
 };
 
 module.exports = {
- crearVideoJuego,
+  crearVideoJuego,
 };

@@ -1,15 +1,21 @@
-const crearVideoJuego = (videojuegos, callback) => {
-const sql = "INSERT INTO videojuegos (nombre, precio,console,stock) VALUES (?,?,?,?,?)";
- db.query(sql, [videojuegos.nombre, videojuegos.precio, videojuegos.console, videojuegos.stock], (err,
-resultado) => {
- if (err) {
- callback(err, null);
- } else {
- callback(null, resultado);
- }
- });
+const db = require("../config/db"); // asegúrate que existe
+
+const crearVideoJuego = (videojuego, callback) => {
+  const sql = "INSERT INTO videojuegos (nombre, precio, consola, stock) VALUES (?,?,?,?)";
+
+  db.query(
+    sql,
+    [videojuego.nombre, videojuego.precio, videojuego.consola, videojuego.stock],
+    (err, resultado) => {
+      if (err) {
+        callback(err, null);
+      } else {
+        callback(null, resultado);
+      }
+    }
+  );
 };
 
 module.exports = {
-    crearVideoJuego
+  crearVideoJuego,
 };
