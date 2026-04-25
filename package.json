@@ -1,4 +1,10 @@
 {
+  "name": "api-videojuegos",
+  "version": "1.0.0",
+  "description": "API de videojuegos con Express y MySQL",
+  "main": "app.js",
+  "scripts": {
+  "name": "api-cafeteria",
   "name": "practica_backend_2026_10",
   "version": "1.0.0",
   "main": "index.js",
@@ -43,4 +49,5 @@
   },
   "homepage": "https://github.com/SENATITACNA/practica_backend_2026_10#readme"
   }
+}
 }
