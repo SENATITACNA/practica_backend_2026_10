@@ -1,10 +1,10 @@
 class videojuegos {
- constructor(id, nombre, precio, consola) {
- this.id = id;
- this.nombre = nombre;
- this.precio = precio;
- this.consola = consola;
- this.stock = stock;
+ constructor(id, nombre, precio, consola, stock) {
+  this.id = id;
+  this.nombre = nombre;
+  this.precio = precio;
+  this.consola = consola;
+  this.stock = stock;
  }
 }
 class clientes {
@@ -16,12 +16,12 @@ class clientes {
  }
 }
 class ventas {
- constructor(id, cliente_id, producto_id, cantidad, total) {
- this.id = id;
- this.cliente_id = cliente_id;
- this.producto_id = producto_id;
- this.cantidad = cantidad;
- this.total = total;
+ constructor(id, cliente_id, videojuego_id, cantidad, total) {
+  this.id = id;
+  this.cliente_id = cliente_id;
+  this.videojuego_id = videojuego_id;
+  this.cantidad = cantidad;
+  this.total = total;
  }
 }
 class categorias {
