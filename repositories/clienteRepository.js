@@ -1,4 +1,5 @@
 const db = require("../config/db");
+
 //Obtener Cliente - GET /api/clientes
 const obtenerClientes = (callback) => {
     const sql = "SELECT * FROM clientes";

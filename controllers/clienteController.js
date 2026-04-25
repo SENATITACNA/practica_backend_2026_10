@@ -1,4 +1,5 @@
 const clienteService = require("../services/clienteService");
+
 //Obtener Cliente - GET /api/clientes
 const obtenerClientes = (req, res) => {
   clienteService.obtenerClientes((err, clientes) => {
