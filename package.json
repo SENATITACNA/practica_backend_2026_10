@@ -6,11 +6,26 @@
     "start": "node app.js",
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js", 
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SENATITACNA/practica_backend_2026_10.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SENATITACNA/practica_backend_2026_10/issues"
+  },
+  "homepage": "https://github.com/SENATITACNA/practica_backend_2026_10#readme",
   "dependencies": {
     "express": "^5.2.1",
     "mysql2": "^3.22.2"
@@ -27,4 +42,5 @@
     "url": "https://github.com/SENATITACNA/practica_backend_2026_10/issues"
   },
   "homepage": "https://github.com/SENATITACNA/practica_backend_2026_10#readme"
+  }
 }
