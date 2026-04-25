@@ -1,7 +1,6 @@
 {
   "name": "practica_backend_2026_10",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
     "accepts": "^2.0.0",
@@ -117,6 +116,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/SENATITACNA/practica_backend_2026_10/issues"
@@ -128,5 +128,15 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SENATITACNA/practica_backend_2026_10.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SENATITACNA/practica_backend_2026_10/issues"
+  },
+  "homepage": "https://github.com/SENATITACNA/practica_backend_2026_10#readme"
   }
 }
