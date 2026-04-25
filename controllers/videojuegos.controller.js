@@ -1,3 +1,4 @@
+const videojuegosService = require("../services/videojuegos.service");
 const actualizarVideojuego = async (req, res) => {
     try {
         const { id } = req.params;
@@ -13,6 +14,7 @@ const actualizarVideojuego = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+
 module.exports = {
     actualizarVideojuego
 };

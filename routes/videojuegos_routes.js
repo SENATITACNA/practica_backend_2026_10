@@ -1,1 +1,0 @@
-router.put('/videojuegos/:id', videojuegosController.updateVideojuego);
