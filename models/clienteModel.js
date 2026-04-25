@@ -1,4 +1,4 @@
-class Cliente {
+class Clientes {
     constructor(id, nombre, correo, telefono) {
         this.id = id;
         this.nombre = nombre;
@@ -6,4 +6,4 @@ class Cliente {
         this.telefono = telefono;
     }
 }
-module.exports = Cliente;
+module.exports = Clientes;
