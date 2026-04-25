@@ -1,5 +1,8 @@
 const express = require("express");
 const app = express();
+const ventaRoutes = require("./routes/ventaRoutes");
+app.use(express.json());
+app.use("/api", ventaRoutes);
 const videojuegoRoutes = require("./routes/videojuegoRoutes");
 
 app.use(express.json());
