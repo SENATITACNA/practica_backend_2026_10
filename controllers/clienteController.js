@@ -1,5 +1,4 @@
 const clienteService = require("../services/clienteService");
-
 const eliminarCliente = (req, res) => {
  const id = req.params.id;
  clienteService.eliminarCliente(id, (err, resultado) => {
@@ -10,5 +9,6 @@ const eliminarCliente = (req, res) => {
   }
  });
 };
-
-module.exports = { eliminarCliente };
+module.exports = {
+    eliminarCliente 
+};
