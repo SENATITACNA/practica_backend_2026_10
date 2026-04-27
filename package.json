@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js"
   },
   "repository": {
@@ -14,6 +15,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/SENATITACNA/practica_backend_2026_10/issues"
