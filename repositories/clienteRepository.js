@@ -1,5 +1,4 @@
 const db = require("../config/db");
-
 const eliminarCliente = (id, callback) => {
  const sql = "DELETE FROM clientes WHERE id = ?";
  db.query(sql, [id], (err, resultado) => {
@@ -11,4 +10,6 @@ const eliminarCliente = (id, callback) => {
  });
 };
 
-module.exports = { eliminarCliente };
+module.exports = { 
+    eliminarCliente 
+};

@@ -1,5 +1,4 @@
 const clienteRepository = require("../repositories/clienteRepository");
-
 const eliminarCliente = (id, callback) => {
  clienteRepository.eliminarCliente(id, (err, resultado) => {
   if (err) {
@@ -12,5 +11,6 @@ const eliminarCliente = (id, callback) => {
   }
  });
 };
-
-module.exports = { eliminarCliente };
+module.exports = { 
+    eliminarCliente 
+};
