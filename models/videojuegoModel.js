@@ -1,4 +1,4 @@
-class Videojuegos {
+class videojuegos {
  constructor(id, nombre, precio,consola,stock) {
  this.id = id;
  this.nombre = nombre;

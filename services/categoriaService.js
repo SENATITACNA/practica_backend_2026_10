@@ -10,6 +10,17 @@ const actualizarCategoria = (id, datos, callback) => {
   });
 };
 
+const listarCategorias = (callback) => {
+  categoriaRepository.listarCategorias((err, categorias) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, categorias);
+    }
+  });
+};
+
 module.exports = {
   actualizarCategoria,
+  listarCategorias
 };

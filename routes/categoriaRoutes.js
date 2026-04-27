@@ -4,4 +4,5 @@ const categoriaController = require("../controllers/categoriaController");
 
 router.put("/categorias/:id", categoriaController.actualizarCategoria);
 
+router.get("/categorias", categoriaController.listarCategorias);
 module.exports = router;
