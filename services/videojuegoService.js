@@ -12,12 +12,12 @@ const crearVideoJuego = (videojuego, callback) => {
   });
 };
 const eliminarVideojuego = (id, callback) => {
- videojuegoRepository.eliminarVideojuego(id, (err, resultado) => {
-  if (err) {
-   callback(err, null);
-  } else {
-   callback(null, { mensaje: "Videojuego eliminado correctamente" });
-   }
+  videojuegoRepository.eliminarVideojuego(id, (err, resultado) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, { mensaje: "Videojuego eliminado correctamente" });
+    }
   });
 };
 module.exports = {
