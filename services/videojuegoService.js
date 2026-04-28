@@ -1,18 +1,26 @@
 const videojuegoRepository = require("../repositories/videojuegoRepository");
-
-const crearVideojuego = (videojuego, callback) => {
-    videojuegoRepository.crearVideojuego(videojuego, (err, resultado) => {
-        if (err) {
-            callback(err, null);
-        } else {
-            callback(null, {
-                mensaje: "Videojuego creado correctamente",
-                id: resultado.insertId
-            });
-        }
-    });
+const crearVideoJuego = (videojuego, callback) => {
+  videojuegoRepository.crearVideoJuego(videojuego, (err, resultado) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, {
+        mensaje: "Videojuego creado correctamente",
+        id: resultado.insertId,
+      });
+    }
+  });
 };
-
+const eliminarVideojuego = (id, callback) => {
+  videojuegoRepository.eliminarVideojuego(id, (err, resultado) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, { mensaje: "Videojuego eliminado correctamente" });
+    }
+  });
+};
 module.exports = {
-    crearVideojuego
+  crearVideoJuego,
+  eliminarVideojuego
 };
