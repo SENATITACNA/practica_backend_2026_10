@@ -6,15 +6,20 @@ const actualizarVideojuego = async (req, res) => {
 
         const result = await videojuegosService.actualizarVideojuego(id, data);
 
+        if (result.affectedRows === 0) {
+            return res.status(404).json({
+                message: "Videojuego no encontrado"
+            });
+        }
+
         res.json({
-            message: "Videojuego actualizado",
-            data: result
+            message: "Videojuego actualizado correctamente"
         });
+
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 };
-
 module.exports = {
     actualizarVideojuego
 };
