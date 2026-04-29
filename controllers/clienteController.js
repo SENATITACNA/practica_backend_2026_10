@@ -21,5 +21,6 @@ const eliminarCliente = (req, res) => {
   }
  });
 };
-
-module.exports = { eliminarCliente };
+module.exports = {
+    eliminarCliente 
+};

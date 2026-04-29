@@ -1,11 +1,3 @@
-class categorias {
- constructor(id, nombre, descripcion) {
- this.id = id;
- this.nombre = nombre;
- this.descripcion = descripcion;
- }
-}
-module.exports = { categorias };
 class ventas {
  constructor(id, cliente_id, videojuego_id, cantidad, total) {
   this.id = id;
@@ -15,4 +7,4 @@ class ventas {
   this.total = total;
  }
 }
-module.exports = { ventas };
+module.exports = ventas;
