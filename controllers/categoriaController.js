@@ -1,15 +1,31 @@
 const categoriaService = require("../services/categoriaService");
 
-const obtenerCategorias = (req, res) => {
-    categoriaService.listarCategorias((err, categorias) => {
-        if (err) {
-            res.status(500).json({ error: "Error del servidor" });
-        } else {
-            res.json(categorias);
-        }
-    });
+const obtenerCategoria = (req, res) => {
+  categoriaService.listarCategoria((err, categoria) => {
+    if (err) {
+      res.status(500).json({ error: "Error del servidor" });
+    } else {
+      res.json(categoria);
+    }
+  });
+};
+
+const actualizarCategoria = (req, res) => {
+  const id = req.params.id;
+  const datos = req.body;
+
+  categoriaService.actualizarCategoria(id, datos, (err, resultado) => {
+    if (err) {
+      res.status(500).json({ error: "Error al actualizar la categoría" });
+    } else {
+      res.status(200).json({
+        mensaje: "Categoría actualizada correctamente"
+      });
+    }
+  });
 };
 
 module.exports = {
-    obtenerCategorias
+  obtenerCategoria,
+  actualizarCategoria
 };

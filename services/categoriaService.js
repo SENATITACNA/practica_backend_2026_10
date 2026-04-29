@@ -1,15 +1,26 @@
 const categoriaRepository = require("../repositories/categoriaRepository");
 
-const listarCategorias = (callback) => {
-    categoriaRepository.obtenerCategorias((err, productos) => {
+const listarCategoria = (callback) => {
+    categoriaRepository.obtenerCategoria((err, producto) => {
         if (err) {
             callback(err, null);
         } else {
-            callback(null, productos);
+            callback(null, producto);
         }
     });
 };
 
+const actualizarCategoria = (id, datos, callback) => {
+  categoriaRepository.actualizarCategoria(id, datos, (err, resultado) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, resultado);
+    }
+  });
+};
+
 module.exports = {
- listarCategorias
+  actualizarCategoria,
+  listarCategoria
 };
