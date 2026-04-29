@@ -24,4 +24,6 @@ const eliminarCliente = (id, callback) => {
  });
 };
 
-module.exports = { eliminarCliente };
+module.exports = {
+    eliminarCliente
+};
