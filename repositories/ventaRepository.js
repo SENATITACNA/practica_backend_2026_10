@@ -1,14 +1,24 @@
 const db = require("../config/db");
-const crearVenta = (venta, callback) => {
- const sql = "INSERT INTO ventas (cliente_id, videojuego_id, cantidad, total) VALUES (?,?,?,?)";
- db.query(sql, [venta.cliente_id, venta.videojuego_id, venta.cantidad, venta.total], (err, resultado) => {
-  if (err) {
-   callback(err, null);
-  } else {
-   callback(null, resultado);
-  }
- });
+
+const getById = (id) => {
+    return new Promise((resolve, reject) => {
+        db.query("SELECT * FROM ventas WHERE id = ?", [id], (err, results) => {
+            if (err) reject(err);
+            else resolve(results[0]);
+        });
+    });
 };
+
+const eliminar = (id) => {
+    return new Promise((resolve, reject) => {
+        db.query("DELETE FROM ventas WHERE id = ?", [id], (err, result) => {
+            if (err) reject(err);
+            else resolve(result);
+        });
+    });
+};
+
 module.exports = {
- crearVenta
+    getById,
+    eliminar
 };

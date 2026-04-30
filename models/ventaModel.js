@@ -1,10 +1,10 @@
-class ventas {
- constructor(id, cliente_id, videojuego_id, cantidad, total) {
-  this.id = id;
-  this.cliente_id = cliente_id;
-  this.videojuego_id = videojuego_id;
-  this.cantidad = cantidad;
-  this.total = total;
- }
+class Venta {
+    constructor({ id = null, cliente_id, videojuego_id, total }) {
+        this.id = id;
+        this.cliente_id = cliente_id;
+        this.videojuego_id = videojuego_id;
+        this.total = total;
+    }
 }
-module.exports = ventas;
+
+module.exports = Venta;
