@@ -1,15 +1,26 @@
 const categoriaRepository = require("../repositories/categoriaRepository");
 
-const actualizarCategorias = (id, categoria, callback) => {
-    categoriaRepository.actualizarCategorias(id, categoria, (err, resultado) => {
-        if (err) {
-            callback(err, null);
-        } else {
-            callback(null, {
-                mensaje: "Producto actualizado correctamente"
-            });
-        }
-    });
+const actualizarCategoria = (id, datos, callback) => {
+  categoriaRepository.actualizarCategoria(id, datos, (err, resultado) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, resultado);
+    }
+  });
 };
 
-module.exports = { actualizarCategorias };
+const listarCategorias = (callback) => {
+  categoriaRepository.listarCategorias((err, categorias) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, categorias);
+    }
+  });
+};
+
+module.exports = {
+  actualizarCategoria,
+  listarCategorias
+};
