@@ -1,9 +1,10 @@
 const mysql = require("mysql2");
+
 const connection = mysql.createConnection({
     host: "80.241.217.53",
-    user: "desarrollador", // Conectarse a MySQL
-    password: "SENATI", // Contraseña.
-    database: "cafeteria" //Nombre de la base de datos.
+    user: "desarrollador",
+    password: "SENATI",
+    database: "cafeteria"
 });
 
 connection.connect((err) => {
@@ -13,4 +14,5 @@ connection.connect((err) => {
         console.log("Conectado a MySQL");
     }
 });
+
 module.exports = connection;
