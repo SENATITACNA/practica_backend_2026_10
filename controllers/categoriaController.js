@@ -25,7 +25,26 @@ const listarCategorias = (req, res) => {
   });
 };
 
+const eliminarCategoria = (req, res) => {
+  const id = req.params.id;
+
+  categoriaService.eliminarCategoria(id, (err, resultado) => {
+    if (err) {
+      res.status(500).json({ error: "Error al eliminar la categoría" });
+    } else {
+      if (resultado.affectedRows === 0) {
+        return res.status(404).json({ mensaje: "Categoría no encontrada" });
+      }
+
+      res.json({
+        mensaje: "Categoría eliminada correctamente"
+      });
+    }
+  });
+};
+
 module.exports = {
   actualizarCategoria,
-  listarCategorias
+  listarCategorias,
+  eliminarCategoria
 };
