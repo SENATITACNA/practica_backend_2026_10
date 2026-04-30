@@ -1,13 +1,25 @@
 const videojuegoService = require("../services/videojuegoService");
-
-const obtenerVideojuegos = (req, res) => {
-  videojuegoService.listarVideojuegos((err, videojuegos) => {
+const crearVideoJuego = (req, res) => {
+  const nuevoVideoJuego = req.body;
+  videojuegoService.crearVideoJuego(nuevoVideoJuego, (err, resultado) => {
     if (err) {
-      res.status(500).json({ error: "Error del servidor" });
+      res.status(500).json({ error: "Error al crear videojuego" });
     } else {
-      res.json(videojuegos);
+      res.status(201).json(resultado);
     }
   });
 };
-
-module.exports = { obtenerVideojuegos };
+const eliminarVideojuego = (req, res) => {
+ const id = req.params.id;
+ videojuegoService.eliminarVideojuego(id, (err, resultado) => {
+  if (err) {
+   res.status(500).json({ error: "Error al eliminar videojuego" });
+  } else {
+   res.json(resultado);
+   }
+  });
+};
+module.exports = {
+  crearVideoJuego,
+  eliminarVideojuego
+};
