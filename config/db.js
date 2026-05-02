@@ -6,7 +6,6 @@ const connection = mysql.createConnection({
     password: "SENATI",
     database: "cafeteria"
 });
-
 connection.connect((err) => {
     if (err) {
         console.log("Error de conexión:", err);
@@ -14,5 +13,4 @@ connection.connect((err) => {
         console.log("Conectado a MySQL");
     }
 });
-
 module.exports = connection;
