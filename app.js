@@ -14,5 +14,5 @@ app.use("/api", ventaRoutes);
 app.use("/api", videojuegoRoutes);
 
 app.listen(3000, () => {
- console.log("Servidor corriendo en puerto 3000");
+  console.log("Servidor corriendo en puerto 3000");
 });

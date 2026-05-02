@@ -1,4 +1,16 @@
 const videojuegoService = require("../services/videojuegoService");
+
+const obtenerVideojuegos = (req, res) => {
+  videojuegoService.listarVideojuegos((err, videojuegos) => {
+    if (err) {
+      res.status(500).json({ error: "Error del servidor" });
+    } else {
+      res.json(videojuegos);
+    }
+  });
+};
+
+module.exports = { obtenerVideojuegos };
 const crearVideoJuego = (req, res) => {
   const nuevoVideoJuego = req.body;
   videojuegoService.crearVideoJuego(nuevoVideoJuego, (err, resultado) => {
@@ -21,5 +33,6 @@ const eliminarVideojuego = (req, res) => {
 };
 module.exports = {
   crearVideoJuego,
-  eliminarVideojuego
+  eliminarVideojuego,
+  obtenerVideojuegos
 };

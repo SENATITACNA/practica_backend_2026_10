@@ -1,4 +1,17 @@
 const db = require("../config/db");
+
+const obtenerVideojuegos = (callback) => {
+  const sql = "SELECT * FROM videojuegos";
+  db.query(sql, (err, resultados) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, resultados);
+    }
+  });
+};
+
+module.exports = { obtenerVideojuegos };
 const crearVideoJuego = (videojuego, callback) => {
   const sql = "INSERT INTO videojuegos (nombre, precio, consola, stock) VALUES (?,?,?,?)";
   db.query(
@@ -25,5 +38,6 @@ const eliminarVideojuego = (id, callback) => {
 };
 module.exports = {
   crearVideoJuego,
-  eliminarVideojuego
+  eliminarVideojuego,
+  obtenerVideojuegos
 };
