@@ -13,3 +13,16 @@ const actualizarCliente = (req, res) => {
 };
 
 module.exports = { actualizarCliente };
+const eliminarCliente = (req, res) => {
+ const id = req.params.id;
+ clienteService.eliminarCliente(id, (err, resultado) => {
+  if (err) {
+   res.status(500).json({ error: "Error al eliminar el cliente" });
+  } else {
+   res.status(200).json(resultado);
+  }
+ });
+};
+module.exports = {
+    eliminarCliente 
+};
