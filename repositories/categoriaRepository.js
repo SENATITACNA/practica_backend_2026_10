@@ -23,7 +23,20 @@ const listarCategorias = (callback) => {
   });
 };
 
+const eliminarCategoria = (id, callback) => {
+  const sql = "DELETE FROM categorias WHERE id = ?";
+
+  db.query(sql, [id], (err, resultado) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, resultado);
+    }
+  });
+};
+
 module.exports = {
   actualizarCategoria,
-  listarCategorias
+  listarCategorias,
+  eliminarCategoria
 };

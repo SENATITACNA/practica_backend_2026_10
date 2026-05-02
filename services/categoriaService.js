@@ -33,8 +33,19 @@ const listarCategorias = (callback) => {
   });
 };
 
+const eliminarCategoria = (id, callback) => {
+  categoriaRepository.eliminarCategoria(id, (err, resultado) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, resultado);
+    }
+  });
+};
+
 module.exports = {
   crearCategoria,
   actualizarCategoria,
-  listarCategorias
+  listarCategorias,
+  eliminarCategoria
 };
